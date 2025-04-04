@@ -10,6 +10,10 @@ def verifyHoliday(holiday, fakedate=None):
             searched_holiday = data
 
     if searched_holiday['name'] == holiday:
-        if searched_holiday['date'] == fakedate if fakedate else datetime.date.today().strftime('%Y-%m-%d'):
+        if fakedate is None:
+            fakedate = datetime.date.today().strftime('%Y-%m-%d')
+        else:
+            fakedate = fakedate
+        if searched_holiday['date'] == fakedate:
             response = True
     return response

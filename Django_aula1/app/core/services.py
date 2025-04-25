@@ -17,3 +17,17 @@ def verifyHoliday(holiday, fakedate=None):
         if searched_holiday['date'] == fakedate:
             response = True
     return response
+
+import pymongo
+
+def teste():
+    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    mydb = myclient["mydatabase"]
+    mycol = mydb["customers"]
+
+    mydict = { "name": "John", "address": "Highway 37" }
+
+    x = mycol.insert_one(mydict)
+
+
+

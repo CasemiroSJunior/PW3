@@ -7,4 +7,5 @@ class FeriadoModel(models.Model):
     modificacao = models.DateTimeField(verbose_name="Modificado em", auto_now_add=False, auto_now=True)
 
     def __str__(self):
-        return self.nome
+        text= f"{self.nome} - Dia: {self.dia}/{self.mes}"
+        return text
